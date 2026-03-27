@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>활동일지 | 권요안 · 전북특별자치도의회 의원</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: #222; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    :root {
+      --blue: #003B95;
+      --purple: #5A1B86;
+      --teal: #016563;
+      --dark-navy: #001240;
+      --light-blue-bg: #E8F0FA;
+      --light-gray-bg: #F4F4F4;
+    }
+
+    .pi-label { display: flex; width: 4px; flex-direction: column; flex-shrink: 0; }
+    .pi-label span { display: block; width: 4px; }
+    .pi-label .pi-blue { background: var(--blue); }
+    .pi-label .pi-purple { background: var(--purple); }
+    .pi-label .pi-teal { background: var(--teal); }
+    .pi-bar { display: flex; width: 100%; height: 6px; }
+    .pi-bar > div { flex: 1; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--blue);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 48px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; }
+    .nav-logo .pi-label { height: 28px; }
+    .nav-logo .pi-label span { flex: 1; }
+    .nav-logo-text { display: flex; flex-direction: column; gap: 1px; }
+    .nav-logo-text span { color: #fff; font-size: 10px; font-weight: 500; line-height: 1.3; }
+    .nav-menu { display: flex; gap: 20px; }
+    .nav-menu a { color: rgba(255,255,255,0.75); font-size: 12px; font-weight: 500; transition: color 0.2s; }
+    .nav-menu a:hover { color: #fff; }
+    .nav-mobile-toggle { display: none; background: none; border: none; padding: 4px; color: #fff; cursor: pointer; }
+    .nav-mobile-toggle svg { width: 24px; height: 24px; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--blue);
+      padding-top: 48px;
+      padding-bottom: 40px;
+    }
+    .page-header-inner {
+      max-width: 960px; margin: 0 auto; padding: 40px 20px 0;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .page-header h1 {
+      font-size: 28px; font-weight: 800; color: #fff;
+    }
+    .page-header .pi-label span { height: 10px; }
+
+    /* ACTIVITY GRID */
+    .activities-section { padding: 48px 0 80px; background: #fff; }
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .activity-card {
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid #eee;
+      transition: transform 0.2s;
+    }
+    .activity-card:hover { transform: translateY(-2px); }
+    .activity-card-img {
+      height: 160px; background: #eee;
+      display: flex; align-items: center; justify-content: center;
+      color: #aaa; font-size: 12px; overflow: hidden;
+    }
+    .activity-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .activity-card-body { padding: 14px; }
+    .activity-card-date { font-size: 11px; color: #999; margin-bottom: 4px; }
+    .activity-card h4 { font-size: 14px; font-weight: 700; }
+
+    /* FOOTER */
+    .footer { background: var(--dark-navy); }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px; max-width: 960px; margin: 0 auto;
+    }
+    .footer-left { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .footer-right { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .nav-menu.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 48px; left: 0; right: 0;
+        background: var(--blue); padding: 16px 24px; gap: 12px;
+      }
+      .nav-mobile-toggle { display: block; }
+      .activities-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="pi-label">
+      <span class="pi-blue"></span><span class="pi-purple"></span><span class="pi-teal"></span>
+    </div>
+    <div class="nav-logo-text">
+      <span>전북특별자치도의회 의원</span>
+      <span>완주군민의 대변인</span>
+    </div>
+  </a>
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html#about">인물소개</a>
+    <a href="index.html#achievements">의정성과</a>
+    <a href="index.html#region">지역별성과</a>
+    <a href="activities.html" style="color:#fff">활동일지</a>
+  </div>
+  <button class="nav-mobile-toggle" id="navToggle" aria-label="메뉴 열기">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="pi-label"><span class="pi-blue" style="background:#fff"></span><span class="pi-purple"></span><span class="pi-teal"></span></div>
+    <h1>활동일지</h1>
+  </div>
+</header>
+
+<section class="activities-section">
+  <div class="container">
+    <div class="activities-grid" id="activitiesGrid"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="pi-bar">
+    <div style="background:var(--blue)"></div>
+    <div style="background:var(--purple)"></div>
+    <div style="background:var(--teal)"></div>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-left">권요안 · 전북특별자치도의회 의원 · 완주군민의 대변인</div>
+    <div class="footer-right">© 2026 권요안. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="data/activities.js"></script>
+<script>
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navMenu').classList.toggle('open');
+  });
+
+  (function() {
+    if (typeof activities === 'undefined') return;
+    var sorted = activities.slice().sort(function(a, b) {
+      return b.date.localeCompare(a.date);
+    });
+    var html = '';
+    sorted.forEach(function(item) {
+      html += '<div class="activity-card">' +
+        '<div class="activity-card-img">' +
+        (item.image && item.image !== 'images/activities/placeholder.jpg'
+          ? '<img src="' + item.image + '" alt="' + item.title + '">'
+          : '사진 준비 중') +
+        '</div>' +
+        '<div class="activity-card-body">' +
+        '<div class="activity-card-date">' + item.date + '</div>' +
+        '<h4>' + item.title + '</h4>' +
+        '</div></div>';
+    });
+    document.getElementById('activitiesGrid').innerHTML = html;
+  })();
+</script>
+
+</body>
+</html>
