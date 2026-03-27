@@ -1121,8 +1121,8 @@
       /* 섹션 10: 후원 & 연락처 */
       .contact {
         min-height: auto;
-        background: #fff;
-        position: relative;
+        background: url('images/profile/contact-mobile.png') no-repeat center bottom / contain;
+        background-color: #fff;
       }
       .contact-upper { flex-direction: column; padding: 0 20px; }
       .contact-donate { padding: 40px 0 24px 0; }
@@ -1136,33 +1136,15 @@
       .contact-info-grid { gap: 14px; }
       .contact-photo { display: none; }
 
-      /* 하단: 모바일 이미지 배경 + 텍스트 */
-      .contact-bottom {
-        top: 0;
-        padding: 0;
-        background: transparent;
-        position: relative;
-      }
-      .contact-mobile-bg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .contact-bottom-inner {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-        padding: 20px 24px 24px;
-      }
-      .contact-emblem { width: 36px; height: 36px; }
-      .contact-emblem-row { margin-bottom: -8px; }
-      .contact-bottom-name-title { font-size: 15px; }
-      .contact-bottom-name-big { font-size: 32px; letter-spacing: 6px; margin-left: 48px; }
-      .contact-bottom-details { font-size: 12px; line-height: 1.7; }
+      /* 하단 파란 박스 */
+      .contact-bottom { top: 0; padding: 24px 0; background: transparent !important; }
+      .contact-mobile-bg { display: none; }
+      .contact-bottom-inner { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .contact-emblem { width: 40px; height: 40px; }
+      .contact-emblem-row { margin-bottom: -10px; }
+      .contact-bottom-name-title { font-size: 16px; }
+      .contact-bottom-name-big { font-size: 36px; letter-spacing: 6px; margin-left: 52px; }
+      .contact-bottom-details { font-size: 13px; line-height: 1.7; }
 
       /* FOOTER */
       .footer-inner { font-size: 11px; padding: 16px; }
