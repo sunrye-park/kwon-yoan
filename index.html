@@ -1004,6 +1004,7 @@
 
     /* ===== MOBILE (767px 이하) ===== */
     @media (max-width: 767px) {
+      /* NAV */
       .nav-menu { display: none; }
       .nav-menu.open {
         display: flex;
@@ -1019,57 +1020,114 @@
       .nav-mobile-toggle { display: block; }
       .nav-logo-name { font-size: 14px; }
 
-      .hero { height: auto; min-height: 100vh; }
-      .hero-inner {
-        padding: 20px;
-        flex-direction: column-reverse;
-        align-items: center;
-      }
-      .hero-text { max-width: 100%; text-align: center; align-items: center; }
-      .hero-slogan { font-size: 42px; white-space: normal; }
-      .hero-sub { font-size: 28px; }
-      .hero-name { font-size: 72px; }
-      .hero-title-row { justify-content: center; }
-      .hero-title-label { font-size: 12px; }
-      .hero-photo {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        height: auto;
-        width: 80%;
-        margin: 0 auto;
-      }
-      .hero-photo img { width: 100%; height: auto; }
-      .hero-desk { height: 40px; }
-      .hero-buttons { justify-content: center; }
-      .hero-buttons a { padding: 10px 20px; font-size: 13px; }
-      .hero-name-block { margin-bottom: 32px; }
+      /* 공통: 섹션 헤더 */
+      .section-header h2 { font-size: 22px; }
+      .section-header .pi-label span { height: 24px; }
+      .section-header { gap: 10px; margin-bottom: 24px; }
+      .container { padding: 0 20px; }
 
+      /* 섹션 1: HERO */
+      .hero { height: auto; min-height: auto; }
+      .hero-inner { position: relative; width: 100%; }
+      .hero-text {
+        max-width: 55%;
+        padding-left: 20px;
+        padding-top: 10px;
+      }
+      .hero-slogan { font-size: 28px; white-space: normal; }
+      .hero-sub { font-size: 18px; }
+      .hero-name { font-size: 48px; }
+      .hero-title-row { justify-content: flex-start; }
+      .hero-title-label { font-size: 10px; }
+      .hero-pi-mark span { width: 3px; height: 12px; }
+      .hero-buttons { justify-content: flex-start; }
+      .hero-buttons a { padding: 8px 16px; font-size: 12px; }
+      .hero-name-block { margin-bottom: 20px; margin-top: 8px; }
+
+      /* 섹션 2: 인물소개 */
+      .about { padding: 40px 0; }
       .about-top { flex-direction: column; align-items: center; text-align: center; }
       .about-photo-col { width: 180px; }
+      .about-greeting h3 { font-size: 22px; }
+      .about-greeting p { font-size: 15px; }
       .career-grid { grid-template-columns: 1fr; }
+      .career-item { font-size: 14px; }
 
+      /* 섹션 3: 의정성과 */
+      .achievements { padding: 40px 0; }
       .achieve-grid { grid-template-columns: 1fr; }
 
-      .region-content { flex-direction: column; }
-      .region-map { min-height: 300px; }
-      .region-list { max-width: 100%; }
+      /* 섹션 4: 지역별 성과 */
+      .region { padding: 40px 0; }
+      .region-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .region-box { font-size: 13px; }
+      .region-detail { padding: 20px; }
+      .region-detail h3 { font-size: 18px; }
+      .region-detail li { font-size: 14px; }
 
+      /* 섹션 5: 통합 반대 */
+      .integration { padding: 40px 0; }
       .integration-content { flex-direction: column; }
       .integration-photos { width: 100%; }
-      .integration-main-photo { min-height: 280px; }
+      .integration-main-photo { min-height: 220px; }
+      .integration-text h3 { font-size: 20px; }
+      .integration-text > p { font-size: 15px; }
+      .timeline-item { font-size: 14px; }
+      .integration-quote { font-size: 15px; padding: 14px 18px; }
 
+      /* 섹션 6: 언론 보도 */
+      .news { padding: 40px 0; }
       .news-cards { grid-template-columns: 1fr; }
+      .news-card h4 { font-size: 16px; }
+      .news-list-item { font-size: 14px; padding: 10px 14px; gap: 8px; }
 
-      .vision-cards { grid-template-columns: 1fr; }
+      /* 섹션 7: 공약 & 비전 */
+      .vision-inner { padding: 40px 0; }
+      .vision-content { flex-direction: column; gap: 20px; }
+      .vision-text-body { font-size: 15px; line-height: 1.8; }
+      .vision-keywords { flex-wrap: wrap; gap: 8px; }
+      .vision-keyword { font-size: 14px; padding: 10px 14px; }
+      .vision-photos { grid-template-columns: repeat(2, 1fr); }
 
+      /* 섹션 8: 활동일지 */
+      .activity-preview { padding: 40px 0; }
+      .activity-preview-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .activity-preview-header a { font-size: 14px; }
       .activity-grid { grid-template-columns: 1fr; }
 
-      .cheer-buttons { flex-direction: row; flex-wrap: wrap; }
+      /* 섹션 9: 응원 */
+      .cheer-inner { padding: 40px 0; }
+      .cheer h2 { font-size: 24px; }
+      .cheer-sub { font-size: 14px; }
+      .cheer-buttons { flex-direction: row; flex-wrap: wrap; gap: 10px; }
+      .cheer-btn { padding: 14px 20px; font-size: 14px; min-width: 80px; }
+      .cheer-btn .emoji { font-size: 24px; }
+      .cheer-btn .count { font-size: 18px; }
 
-      .contact-content { grid-template-columns: 1fr; }
+      /* 섹션 10: 후원 & 연락처 */
+      .contact { min-height: auto; background-size: cover; }
+      .contact-upper { flex-direction: column; padding: 0 20px; }
+      .contact-donate { padding: 40px 0 24px 0; }
+      .contact-donate .section-header h2 { font-size: 22px; }
+      .contact-account-box { max-width: 100%; }
+      .account-number { font-size: 20px; }
+      .account-owner { font-size: 13px; }
+      .contact-info-row { gap: 10px; }
+      .contact-info-label { font-size: 12px; min-width: 64px; padding: 4px 10px; }
+      .contact-info-value { font-size: 14px; }
+      .contact-photo { width: 100%; max-height: 300px; }
 
-      .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
+      /* 하단 파란 박스 */
+      .contact-bottom { top: 0; padding: 24px 0; }
+      .contact-bottom-inner { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .contact-emblem { width: 40px; height: 40px; }
+      .contact-emblem-row { margin-bottom: -10px; }
+      .contact-bottom-name-title { font-size: 16px; }
+      .contact-bottom-name-big { font-size: 36px; letter-spacing: 6px; margin-left: 52px; }
+      .contact-bottom-details { font-size: 13px; line-height: 1.7; }
+
+      /* FOOTER */
+      .footer-inner { font-size: 11px; padding: 16px; }
     }
   </style>
 </head>
